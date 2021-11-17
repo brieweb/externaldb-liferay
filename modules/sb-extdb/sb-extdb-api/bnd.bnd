@@ -1,0 +1,10 @@
+Bundle-Name: sb-extdb-api
+Bundle-SymbolicName: com.liferay.example.servicebuilder.extdb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.example.servicebuilder.extdb.exception,\
+	com.liferay.example.servicebuilder.extdb.model,\
+	com.liferay.example.servicebuilder.extdb.service,\
+	com.liferay.example.servicebuilder.extdb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../sb-extdb-service/service.xml

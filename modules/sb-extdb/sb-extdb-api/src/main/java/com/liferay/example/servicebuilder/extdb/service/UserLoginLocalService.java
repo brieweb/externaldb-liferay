@@ -33,6 +33,7 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 
 import java.io.Serializable;
 
+import java.util.Date;
 import java.util.List;
 
 import org.osgi.annotation.versioning.ProviderType;
@@ -244,6 +245,8 @@ public interface UserLoginLocalService
 	 */
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getUserLoginsCount();
+
+	public void updateUserLogin(long userId, Date loginDate);
 
 	/**
 	 * Updates the user login in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.

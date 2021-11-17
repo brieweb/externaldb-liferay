@@ -266,6 +266,10 @@ public class UserLoginLocalServiceUtil {
 		return getService().getUserLoginsCount();
 	}
 
+	public static void updateUserLogin(long userId, java.util.Date loginDate) {
+		getService().updateUserLogin(userId, loginDate);
+	}
+
 	/**
 	 * Updates the user login in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	 *

@@ -58,4 +58,10 @@ public interface UserLogin extends PersistedModel, UserLoginModel {
 
 		};
 
+	public String getFirstName();
+
+	public String getLastName();
+
+	public String getLogin();
+
 }

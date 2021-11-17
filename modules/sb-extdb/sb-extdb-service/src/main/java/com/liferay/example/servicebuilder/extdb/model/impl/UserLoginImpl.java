@@ -14,6 +14,10 @@
 
 package com.liferay.example.servicebuilder.extdb.model.impl;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.kernel.service.UserLocalServiceUtil;
+
 /**
  * The extended model implementation for the UserLogin service. Represents a row in the &quot;UserLogin&quot; database table, with each column mapped to a property of this class.
  *
@@ -31,6 +35,43 @@ public class UserLoginImpl extends UserLoginBaseImpl {
 	 * Never reference this class directly. All methods that expect a user login model instance should use the {@link com.liferay.example.servicebuilder.extdb.model.UserLogin} interface instead.
 	 */
 	public UserLoginImpl() {
+	}
+	
+	public String getFirstName() {
+		String firstName = "Error Name";
+		try {
+			User theUser = UserLocalServiceUtil.getUser(this.getUserId());
+
+			firstName = theUser.getFirstName();
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			
+		}
+		return firstName;
+	}
+
+	public String getLastName() {
+		String firstName = "Error Name";
+		try {
+			User theUser = UserLocalServiceUtil.getUser(this.getUserId());
+			firstName = theUser.getLastName();
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			
+		}
+		return firstName;
+	}
+
+	public String getLogin() {
+		String firstName = "Error Name";
+		try {
+			User theUser = UserLocalServiceUtil.getUser(this.getUserId());
+			firstName = theUser.getLogin();
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			
+		}
+		return firstName;
 	}
 
 }

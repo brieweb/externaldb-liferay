@@ -88,6 +88,11 @@ public class UserLoginWrapper
 		}
 	}
 
+	@Override
+	public String getFirstName() {
+		return model.getFirstName();
+	}
+
 	/**
 	 * Returns the last login of this user login.
 	 *
@@ -96,6 +101,16 @@ public class UserLoginWrapper
 	@Override
 	public Date getLastLogin() {
 		return model.getLastLogin();
+	}
+
+	@Override
+	public String getLastName() {
+		return model.getLastName();
+	}
+
+	@Override
+	public String getLogin() {
+		return model.getLogin();
 	}
 
 	/**

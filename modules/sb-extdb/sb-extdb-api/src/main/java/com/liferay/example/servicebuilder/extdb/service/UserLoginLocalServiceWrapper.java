@@ -300,6 +300,11 @@ public class UserLoginLocalServiceWrapper
 		return _userLoginLocalService.getUserLoginsCount();
 	}
 
+	@Override
+	public void updateUserLogin(long userId, java.util.Date loginDate) {
+		_userLoginLocalService.updateUserLogin(userId, loginDate);
+	}
+
 	/**
 	 * Updates the user login in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	 *

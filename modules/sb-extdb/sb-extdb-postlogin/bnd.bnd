@@ -1,0 +1,3 @@
+Bundle-Name: sb-extdb-postlogin
+Bundle-SymbolicName: com.liferay.example.servicebuilder.extdb.event
+Bundle-Version: 1.0.0

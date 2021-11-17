@@ -51,10 +51,14 @@ public class UserLoginLocalServiceImpl extends UserLoginLocalServiceBaseImpl {
 	private static final Log logger = LogFactoryUtil.getLog(UserLoginLocalServiceImpl.class);
 	
 	public void updateUserLogin(final long userId, final Date loginDate) {
-	    UserLogin login;
+	    UserLogin login = null;
 
 	    // first try to get the existing record for the user
-	    login = fetchUserLogin(userId);
+	    try {
+	    	login = fetchUserLogin(userId);
+	    } catch (Exception e) {
+	    	if (logger.isDebugEnabled()) logger.debug("User " + userId + " has never logged in before.");
+	    }
 
 	    if (login == null) {
 	      // user has never logged in before, need a new record

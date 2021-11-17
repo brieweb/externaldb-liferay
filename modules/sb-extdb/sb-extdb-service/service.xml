@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
 
+
 <service-builder dependency-injector="ds"
 	package-path="com.liferay.example.servicebuilder.extdb">
 	<namespace>ExtDB</namespace>
@@ -11,17 +12,17 @@
 		<column name="userId" db-name="userId" type="long"	primary="true" />
 
 		<!-- We'll track the date of last login -->
-		<column name="lastLogin"  type="Date" />
+		<column name="lastLogin" db-name="lastLogin" type="Date" />
 
 		<!-- We'll track the total number of individual logins for the user -->
-		<column name="totalLogins"  type="long" />
+		<column name="totalLogins" db-name="totalLogins" type="long" />
 
 		<!-- Let's also track the longest time between logins -->
 		<column name="longestTimeBetweenLogins"
-			 type="long" />
+			db-name="longestTimeBetweenLogins" type="long" />
 
 		<!-- And we'll also track the shortest time between logins -->
 		<column name="shortestTimeBetweenLogins"
-			 type="long" />
+			db-name="shortestTimeBetweenLogins" type="long" />
 	</entity>
 </service-builder>

@@ -1,0 +1,6 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileOnly project(":modules:sb-extdb:sb-extdb-api")
+	compileOnly project(":modules:sb-extdb:sb-extdb-service")
+	compileOnly group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
+}

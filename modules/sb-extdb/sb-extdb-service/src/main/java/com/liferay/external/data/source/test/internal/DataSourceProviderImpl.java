@@ -4,7 +4,7 @@ import javax.sql.DataSource;
 
 import com.liferay.portal.kernel.dao.jdbc.DataSourceFactoryUtil;
 import com.liferay.portal.kernel.dao.jdbc.DataSourceProvider;
-import com.liferay.portal.kernel.util.PropsUtil;
+import com.liferay.portal.util.PropsUtil;
 
 public class DataSourceProviderImpl implements DataSourceProvider {
 

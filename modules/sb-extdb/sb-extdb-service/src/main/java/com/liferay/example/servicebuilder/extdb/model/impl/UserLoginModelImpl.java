@@ -27,6 +27,7 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.model.impl.BaseModelImpl;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.service.UserLocalServiceUtil;
+import com.liferay.portal.kernel.util.DateUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 
 import java.io.Serializable;
@@ -89,9 +90,11 @@ public class UserLoginModelImpl
 
 	public static final String TABLE_SQL_DROP = "drop table UserLogin";
 
-	public static final String ORDER_BY_JPQL = " ORDER BY userLogin.userId ASC";
+	public static final String ORDER_BY_JPQL =
+		" ORDER BY userLogin.lastLogin DESC";
 
-	public static final String ORDER_BY_SQL = " ORDER BY UserLogin.userId ASC";
+	public static final String ORDER_BY_SQL =
+		" ORDER BY UserLogin.lastLogin DESC";
 
 	public static final String DATA_SOURCE = "extDataSource";
 
@@ -104,7 +107,7 @@ public class UserLoginModelImpl
 	 *		#getColumnBitmask(String)}
 	 */
 	@Deprecated
-	public static final long USERID_COLUMN_BITMASK = 1L;
+	public static final long LASTLOGIN_COLUMN_BITMASK = 1L;
 
 	/**
 	 * @deprecated As of Athanasius (7.3.x), with no direct replacement
@@ -430,17 +433,17 @@ public class UserLoginModelImpl
 
 	@Override
 	public int compareTo(UserLogin userLogin) {
-		long primaryKey = userLogin.getPrimaryKey();
+		int value = 0;
 
-		if (getPrimaryKey() < primaryKey) {
-			return -1;
+		value = DateUtil.compareTo(getLastLogin(), userLogin.getLastLogin());
+
+		value = value * -1;
+
+		if (value != 0) {
+			return value;
 		}
-		else if (getPrimaryKey() > primaryKey) {
-			return 1;
-		}
-		else {
-			return 0;
-		}
+
+		return 0;
 	}
 
 	@Override

@@ -266,6 +266,12 @@ public class UserLoginLocalServiceUtil {
 		return getService().getUserLoginsCount();
 	}
 
+	/**
+	 * updateUserLogin: Updates the user login record with the given info.
+	 *
+	 * @param userId User who logged in.
+	 * @param loginDate Date when the user logged in.
+	 */
 	public static void updateUserLogin(long userId, java.util.Date loginDate) {
 		getService().updateUserLogin(userId, loginDate);
 	}

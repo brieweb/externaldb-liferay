@@ -300,6 +300,12 @@ public class UserLoginLocalServiceWrapper
 		return _userLoginLocalService.getUserLoginsCount();
 	}
 
+	/**
+	 * updateUserLogin: Updates the user login record with the given info.
+	 *
+	 * @param userId User who logged in.
+	 * @param loginDate Date when the user logged in.
+	 */
 	@Override
 	public void updateUserLogin(long userId, java.util.Date loginDate) {
 		_userLoginLocalService.updateUserLogin(userId, loginDate);

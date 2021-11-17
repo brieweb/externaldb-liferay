@@ -246,6 +246,12 @@ public interface UserLoginLocalService
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getUserLoginsCount();
 
+	/**
+	 * updateUserLogin: Updates the user login record with the given info.
+	 *
+	 * @param userId User who logged in.
+	 * @param loginDate Date when the user logged in.
+	 */
 	public void updateUserLogin(long userId, Date loginDate);
 
 	/**

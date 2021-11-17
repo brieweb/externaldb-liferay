@@ -14,8 +14,13 @@
 
 package com.liferay.example.servicebuilder.extdb.model.impl;
 
+import org.osgi.service.component.annotations.Reference;
+
+
+
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.model.User;
+
 import com.liferay.portal.kernel.service.UserLocalServiceUtil;
 
 /**
@@ -49,7 +54,7 @@ public class UserLoginImpl extends UserLoginBaseImpl {
 		}
 		return firstName;
 	}
-
+	
 	public String getLastName() {
 		String firstName = "Error Name";
 		try {
@@ -61,7 +66,7 @@ public class UserLoginImpl extends UserLoginBaseImpl {
 		}
 		return firstName;
 	}
-
+	
 	public String getLogin() {
 		String firstName = "Error Name";
 		try {
@@ -73,5 +78,10 @@ public class UserLoginImpl extends UserLoginBaseImpl {
 		}
 		return firstName;
 	}
+	
+
+
+	
+	//private static final Logger _log = LoggerFactory.getLogger(UserLoginImpls.class);
 
 }

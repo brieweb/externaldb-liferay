@@ -1,0 +1,4 @@
+Bundle-Name: sb-extdb-web
+Bundle-SymbolicName: com.liferay.example.servicebuilder.extdb.portlet
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.example.servicebuilder.extdb.portlet.constants
